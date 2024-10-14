@@ -1,0 +1,375 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #0F0F0F;
+  color: #FFFFFF;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: rgba(15, 15, 15, 0.8);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+header nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+header nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+header nav ul li {
+  margin: 0 15px;
+}
+header nav ul li a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+header nav ul li a:hover {
+  color: #8B5CF6;
+}
+header nav .cv-abaixar {
+  font-family: "Protest Strike", sans-serif;
+  background-image: linear-gradient(90deg, #8B5CF6, #4C1D95);
+  border: #0F0F0F;
+  padding: 5px 20px;
+  border-radius: 15px;
+  background-color: #FFFFFF;
+}
+header nav .cv-abaixar a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 1.8em;
+}
+header nav .cv-abaixar:hover {
+  box-shadow: 0 0 30px 10px #8B5CF6;
+  color: #FFFFFF;
+  transform: translateY(5px);
+}
+
+section {
+  padding: 10px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+section h2 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #8B5CF6;
+}
+
+#home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+  margin-bottom: 50px;
+  text-align: center;
+  padding: 0px 20px;
+  justify-content: space-between;
+}
+#home .container-left h1 {
+  background-image: linear-gradient(90deg, #8B5CF6, #d4a1ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0;
+  font-size: 2em;
+}
+#home .container-left h2 {
+  margin-top: 0;
+  font-family: "Protest Strike", sans-serif;
+  margin-bottom: 20px;
+  display: inline-block;
+  font-weight: normal;
+}
+#home .container-left h2 .web-dev {
+  color: #8B5CF6;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 1.5em;
+  background-image: linear-gradient(90deg, #8B5CF6, #d4a1ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#home .container-left h2 .mobile {
+  color: #8B5CF6;
+  background-image: linear-gradient(90deg, #8B5CF6, #d4a1ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding-left: 5px;
+}
+#home .container-left .stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+  text-align: center;
+  margin: 0px 10%;
+  max-width: 90%;
+}
+#home .container-left .lista-rede-sociais {
+  margin-top: 20px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+#home .container-left .lista-rede-sociais li {
+  color: #8B5CF6;
+  padding: 10px;
+  margin: 0px 2px;
+  font-size: 1.5em;
+}
+#home .container-right {
+  width: 100%;
+}
+#home .container-right img {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 3px solid #8B5CF6;
+  border-radius: 15px;
+  transform: rotate(3deg);
+  box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.3);
+  transition: box-shadow 0.5s ease-in-out;
+}
+#home .container-right img:hover {
+  box-shadow: 0 0 30px 10px #8B5CF6;
+}
+
+.stat-card {
+  background-color: #0F0F0F;
+  border: 2px solid #8B5CF6;
+  border-radius: 10px;
+  margin: 0 15px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  transition: transform 0.5s, box-shadow 0.5s;
+  padding: 10px;
+  animation: fadeIn 1s ease-out;
+}
+.stat-card .number {
+  font-size: 1.2em;
+  max-height: 80px;
+  font-weight: bold;
+  color: #8B5CF6;
+  position: relative;
+  max-height: 100px;
+  overflow: hidden;
+  transition: max-height 1s ease-in-out;
+}
+.stat-card .number:hover {
+  opacity: 1;
+  max-height: 100%;
+}
+.stat-card .number .text-content {
+  display: block;
+  line-height: 1.5;
+  padding: 10px;
+}
+.stat-card .number::after {
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  background-color: #000;
+  padding-left: 10px;
+  color: #fff;
+  transition: opacity 0.5s ease;
+}
+.stat-card .number:hover::after {
+  transition: max-height 1s ease-in-out;
+  opacity: 0;
+}
+.stat-card .label {
+  font-size: 0.9em;
+  color: white;
+}
+.stat-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+}
+
+#services .service {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+#services .service p {
+  font-size: 1.4em;
+}
+#services .service:hover {
+  box-shadow: 0 0 30px 10px #8B5CF6;
+  transform: translateY(-5px);
+}
+#services .service h3 {
+  font-family: "Protest Strike", sans-serif;
+  font-weight: bold;
+  background-image: linear-gradient(90deg, #8B5CF6, #d4a1ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #8B5CF6;
+  display: inline-block;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+#works .work-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+#works .work-grid .work-item {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+#works .work-grid .work-item:hover {
+  transform: translateY(-5px);
+}
+#works .work-grid .work-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+#works .work-grid .work-item h3 {
+  font-size: 1.3em;
+  color: #8B5CF6;
+  margin: 15px;
+}
+#works .work-grid .work-item p {
+  margin: 0 15px 15px;
+  font-size: 0.9em;
+}
+
+#experience .experience-item {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+#experience .experience-item h3 {
+  font-family: "Protest Strike", sans-serif;
+  font-weight: bold;
+  background-image: linear-gradient(90deg, #8B5CF6, #d4a1ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #8B5CF6;
+  display: inline-block;
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+#experience .experience-item .date {
+  font-style: italic;
+  color: #4C1D95;
+  margin-bottom: 10px;
+}
+
+#contact h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#contact .botao-copiar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+#contact .botao-copiar input {
+  padding: 20px;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  width: 600px;
+  font-family: "Protest Strike", sans-serif;
+  font-weight: bold;
+  background-image: linear-gradient(90deg, #8B5CF6, #4C1D95);
+  text-align: center;
+  border: #0F0F0F;
+  color: #240d45;
+}
+#contact .botao-copiar input:hover {
+  border: none;
+  box-shadow: 0 0 30px 10px #8B5CF6;
+  transform: translateY(-5px);
+}
+#contact .botao-copiar button {
+  padding: 20px;
+  font-size: 1.8em;
+  margin-bottom: 10px;
+  width: 100px;
+  cursor: pointer;
+  border: #0F0F0F;
+  background-color: #4C1D95;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 0px;
+  transition: background-color 0.3s;
+}
+#contact .botao-copiar button:hover {
+  box-shadow: 0 0 30px 10px #8B5CF6;
+  transform: translateY(-5px);
+}
+
+footer {
+  text-align: center;
+  padding: 20px 0;
+  background-color: rgba(15, 15, 15, 0.8);
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+  #home h1 {
+    font-size: 2.5em;
+  }
+  #home h2 {
+    font-size: 1.2em;
+  }
+  #works .work-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px #8B5CF6, 0 0 10px #8B5CF6, 0 0 15px #8B5CF6;
+  }
+  50% {
+    box-shadow: 0 0 10px #8B5CF6, 0 0 20px #8B5CF6, 0 0 30px #8B5CF6;
+  }
+}
+.stat-card {
+  animation: glow 2s infinite alternate;
+}
+
+/*# sourceMappingURL=styles.css.map */

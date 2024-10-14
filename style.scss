@@ -1,0 +1,476 @@
+// Variáveis
+$primary-color: #8B5CF6;
+$background-color: #0F0F0F;
+$text-color: #FFFFFF;
+$accent-color: #4C1D95;
+
+// Mixins
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Estilos globais
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: $background-color;
+    color: $text-color;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+// Header
+header {
+    background-color: rgba($background-color, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+
+    nav {
+        @include flex-center();
+        justify-content: space-evenly;
+        ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+
+            li {
+                margin: 0 15px;
+
+                a {
+                    color: $text-color;
+                    text-decoration: none;
+                    font-weight: bold;
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+
+               
+            }
+           
+        }
+        .cv-abaixar{
+          
+            
+            font-family: "Protest Strike", sans-serif;
+            
+            background-image: linear-gradient(90deg, $primary-color, $accent-color); // Gradiente para variação de cor
+            //-webkit-background-clip: text; // Apenas o texto recebe o gradiente
+            //-webkit-text-fill-color: transparent;
+           
+            border: $background-color;
+            //background-image: url("https://i.pinimg.com/originals/d1/9a/91/d19a91b5e67427f63a834d1b8bc6763c.gif");
+            
+            padding: 5px 20px;
+            border-radius: 15px;
+            background-color: $text-color;
+            a{
+                color: $text-color;
+                text-decoration: none;
+                font-size: 1.8em;
+                
+               
+            }
+            &:hover {
+                box-shadow: 0 0 30px 10px $primary-color;
+                color: $text-color;
+                transform: translateY(5px);
+            }
+        }
+    }
+}
+
+// Seções
+section {
+    padding: 10px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    h2 {
+        text-align: center;
+        font-size: 2.5em;
+        margin-bottom: 40px;
+        color: $primary-color;
+    }
+}
+
+// Home
+#home {
+    @include flex-center;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+    margin-bottom: 50px;
+    text-align: center;
+    padding: 0px 20px;
+    justify-content: space-between;
+    .container-left{
+        
+        h1 {
+            background-image: linear-gradient(90deg, $primary-color, #d4a1ff); // Gradiente para variação de cor
+            -webkit-background-clip: text; // Apenas o texto recebe o gradiente
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0;
+            font-size: 2em;
+            
+        }
+    
+        h2 {
+            margin-top: 0;
+            font-family: "Protest Strike", sans-serif;
+            margin-bottom: 20px;
+            display: inline-block;
+            font-weight: normal;
+        
+            .web-dev {
+                color: $primary-color; // Cor roxa para "Web Developer +"
+                background-color: transparent; // Sem fundo
+                font-weight: bold; // Fonte 
+                font-size: 1.5em;
+                background-image: linear-gradient(90deg, $primary-color, #d4a1ff); // Gradiente para variação de cor
+                -webkit-background-clip: text; // Apenas o texto recebe o gradiente
+                -webkit-text-fill-color: transparent;
+            }
+        
+            .mobile {
+                color: $primary-color; // Cor inicial roxa
+                background-image: linear-gradient(90deg, $primary-color, #d4a1ff); // Gradiente para variação de cor
+                -webkit-background-clip: text; // Apenas o texto recebe o gradiente
+                -webkit-text-fill-color: transparent; // O fundo do texto se torna transparente
+                font-size: 1.5em; // Maior que "Web Developer +"
+                font-weight: bold; // Negrito para destaque
+                padding-left: 5px; // Espaçamento extra
+            }
+        }
+
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 40px;
+            text-align: center;
+            margin: 0px 10%;
+            max-width: 90%;
+           
+        }
+        .lista-rede-sociais{
+            margin-top: 20px;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-direction:row ;
+            li{
+                color: $primary-color;
+                padding: 10px;
+                margin: 0px 2px;
+                font-size: 1.5em;
+            }
+
+        }
+    }
+   .container-right{
+    width: 100%;
+    img {
+        width: 500px;
+        height: 500px;
+        object-fit: cover;
+        margin-bottom: 20px;
+        border: 3px solid $primary-color;
+        
+        // Remove o border-radius para manter o formato quadrado
+        border-radius: 15px;
+
+        // Rotaciona o quadrado em 45 graus
+        transform: rotate(3deg);
+        box-shadow: 0 0 15px 5px rgba(255, 255, 255, 0.3);
+        transition: box-shadow 0.5s ease-in-out;
+    
+        // Brilho ao passar o mouse
+        &:hover {
+            box-shadow: 0 0 30px 10px $primary-color;
+        }
+    }
+
+   
+
+   }
+
+
+}
+.stat-card {
+    background-color: $background-color;
+    border: 2px solid $primary-color;
+    border-radius: 10px;
+    margin: 0 15px;
+    text-align: center;
+    @include flex-center();
+    width: 100%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    transition: transform 0.5s, box-shadow 0.5s;
+    padding: 10px;
+    .number {
+
+        font-size: 1.2em;
+        max-height: 80px; 
+        font-weight: bold;
+        color: $primary-color;
+        position: relative;
+        max-height: 100px;  // Limita a altura para o primeiro parágrafo
+        overflow: hidden;  // Oculta o conteúdo extra
+        // Animação na expansão
+        transition: max-height 1s ease-in-out;
+        &:hover {
+            opacity: 1; 
+            max-height: 100%;  // Expande a altura ao passar o mouse
+        }
+
+        .text-content {
+            display: block;
+            line-height: 1.5;  // Espaçamento entre linhas para leitura agradável
+            padding: 10px;
+        }
+
+        &::after {
+             // Adiciona reticências
+            position: absolute;
+            bottom: 0;
+            right: 10px;
+            background-color: #000;  // Cria uma ilusão de gradiente
+            padding-left: 10px;
+            color: #fff;
+            transition: opacity 0.5s ease;
+            
+        }
+
+        &:hover::after {
+            transition: max-height 1s ease-in-out;
+            opacity: 0;  // Retira as reticências quando a div é expandida
+          }
+
+    }
+  
+    .label {
+      font-size: 0.9em;
+      color: white;
+    }
+  
+    &:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    }
+  
+    // Animação de entrada
+    animation: fadeIn 1s ease-out;
+  }
+
+// Serviços
+#services {
+    .service {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        margin-bottom: 30px;
+        border-radius: 15px;
+        transition: transform 0.3s ease;
+        
+
+        p{
+            font-size: 1.4em;
+        }
+
+        &:hover {
+            box-shadow: 0 0 30px 10px $primary-color;
+            transform: translateY(-5px);
+        }
+
+        h3 {
+            font-family: "Protest Strike", sans-serif;
+            font-weight: bold;
+            background-image: linear-gradient(90deg, $primary-color, #d4a1ff); // Gradiente para variação de cor
+            -webkit-background-clip: text; // Apenas o texto recebe o gradiente
+            -webkit-text-fill-color: transparent;
+            color: $primary-color;
+            display: inline-block;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+    }
+}
+
+// Trabalhos
+#works {
+    .work-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+
+        .work-item {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+            }
+
+            img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+
+            h3 {
+                font-size: 1.3em;
+                color: $primary-color;
+                margin: 15px;
+            }
+
+            p {
+                margin: 0 15px 15px;
+                font-size: 0.9em;
+            }
+        }
+    }
+}
+
+// Experiência
+#experience {
+    .experience-item {
+        margin-bottom: 40px;
+        padding: 20px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+
+        h3 {
+            font-family: "Protest Strike", sans-serif;
+            font-weight: bold;
+            background-image: linear-gradient(90deg, $primary-color, #d4a1ff); // Gradiente para variação de cor
+            -webkit-background-clip: text; // Apenas o texto recebe o gradiente
+            -webkit-text-fill-color: transparent;
+            color: $primary-color;
+            display: inline-block;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .date {
+            font-style: italic;
+            color: $accent-color;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+// Contato
+#contact {
+    h3{
+       
+        @include flex-center()
+    }
+    .botao-copiar{
+      
+        @include flex-center();
+        margin-top: 50px;
+
+        input {
+            padding: 20px;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            width: 600px;
+            font-family: "Protest Strike", sans-serif;
+            font-weight: bold;
+            background-image: linear-gradient(90deg, $primary-color, $accent-color); // Gradiente para variação de cor
+           // -webkit-background-clip: text; // Apenas o texto recebe o gradiente
+            //-webkit-text-fill-color: transparent;
+            text-align: center;
+            border: $background-color;
+            //background-image: url("https://i.pinimg.com/originals/d1/9a/91/d19a91b5e67427f63a834d1b8bc6763c.gif");
+            color: #240d45;
+            &:hover {
+                border: none;
+                box-shadow: 0 0 30px 10px $primary-color;
+                transform: translateY(-5px);
+            }
+           
+        }
+
+        button {
+            padding: 20px;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            width: 100px;
+            cursor: pointer;
+            border: $background-color;
+            background-color: $accent-color;
+            color: $text-color;
+            border: none;
+            border-radius: 0px;
+            transition: background-color 0.3s;
+
+            &:hover {
+                box-shadow: 0 0 30px 10px $primary-color;
+                transform: translateY(-5px);
+            }
+        }
+    }
+}
+
+// Footer
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: rgba($background-color, 0.8);
+    margin-top: 40px;
+}
+
+// Responsividade
+@media (max-width: 768px) {
+    #home {
+        h1 {
+            font-size: 2.5em;
+        }
+
+        h2 {
+            font-size: 1.2em;
+        }
+
+      
+    }
+
+    #works {
+        .work-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  // Brilho contínuo nos cards
+  @keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 5px $primary-color, 0 0 10px $primary-color, 0 0 15px $primary-color;
+      }
+      50% {
+        box-shadow: 0 0 10px $primary-color, 0 0 20px $primary-color, 0 0 30px $primary-color;
+      }
+  }
+  
+  .stat-card {
+    animation: glow 2s infinite alternate;
+  }
