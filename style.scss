@@ -160,6 +160,7 @@ section {
            
         }
         .lista-rede-sociais{
+            
             margin-top: 20px;
             list-style: none;
             display: flex;
@@ -172,6 +173,9 @@ section {
                 font-size: 1.5em;
             }
 
+        }
+        .text-content-mobile{
+            display: none;
         }
     }
    .container-right{
@@ -304,37 +308,142 @@ section {
 
 // Trabalhos
 #works {
+    
     .work-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 30px;
-
-        .work-item {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-
-            &:hover {
-                transform: translateY(-5px);
+    
+        .work-em-volta-item {
+            display: flex;
+            flex-direction: column;
+    
+            .grid-item {
+                display: flex;
+                flex-direction: column;
+                width: 100%; // Altera para 100% para ocupar todo o espaço do pai
+                transition: flex-grow 0.3s ease; // Adiciona transição apenas para flex-grow
+                
+                // Ao passar o mouse, o item cresce e os outros encolhem
+                &:hover {
+                    transform: scale(1.05); // Aumenta o tamanho do item
+                    flex-grow: 2; // Aumenta o espaço ocupado pelo item em foco
+                    z-index: 1; // Garante que o item em foco fique na frente
+                }
+                .hard-skils {
+                    display: none;
+                    width: 90%; // Começa escondido
+                    background-color: $accent-color;
+                    color: $text-color;
+                    padding: 15px; // Ajuste o padding conforme necessário
+                    border-radius: 15px;
+                    position: absolute; // Para posicioná-lo em relação ao item pai
+                    top: 100%; // Ajuste conforme necessário para que apareça abaixo do item
+                    right:0; // Alinhado à esquerda do item pai
+                    z-index: 2; // Certifique-se de que esteja acima de outros elementos
+    
+                    ul {
+                        list-style: none;
+                        display: flex;
+                        flex-wrap: wrap;
+                        padding: 0;
+                        margin: 0;
+    
+                        li {
+                            text-align: center;
+                            color: $background-color;
+                            padding: 10px;
+                            border-radius: 15px;
+                            display: flex;
+                            font-family: "Protest Strike", sans-serif;
+                            font-weight: bold;
+                            background-color: $primary-color;
+                            margin: 10px 10px;
+                            font-size: 1.0em;
+                            img{
+                                margin-right: 4px;
+                                max-width: 1.5em;
+                            }
+                        }
+                    }
+                }
+                .work-caract {
+                    display: none; // Começa escondido
+                    background-color: $accent-color;
+                    color: $text-color;
+                    padding: 15px; // Ajuste o padding conforme necessário
+                    border-radius: 15px;
+                    position: absolute; // Para posicioná-lo em relação ao item pai
+                    top: 0; // Ajuste conforme necessário para que apareça abaixo do item
+                    right:100%; // Alinhado à esquerda do item pai
+                    z-index: 2; // Certifique-se de que esteja acima de outros elementos
+    
+                    ul {
+                        list-style: none;
+                        
+                        padding: 0;
+                        margin: 0;
+    
+                        li {
+                            display: flex;
+                            font-family: "Protest Strike", sans-serif;
+                            font-weight: bold;
+                            background-image: linear-gradient(90deg, $text-color, #d4a1ff); // Gradiente para variação de cor
+                            -webkit-background-clip: text; // Apenas o texto recebe o gradiente
+                            -webkit-text-fill-color: transparent;
+                            margin: 10px 0px;
+                            font-size: 1.5em;
+                        }
+                    }
+                }
+    
+                .work-item {
+                    width: 100%;
+                    background-color: rgba(255, 255, 255, 0.1);
+                    border-radius: 10px;
+                    
+                    transition: transform 0.3s ease;
+                    height: 100% ;
+    
+                    &:hover {
+                        transform: translateY(-5px);
+                    }
+    
+                    img {
+                        width: 100%;
+                        height: 200px;
+                        object-fit: cover;
+                    }
+    
+                    h3 {
+                        font-size: 1.3em;
+                        color: $primary-color;
+                        margin: 15px;
+                    }
+    
+                    p {
+                        margin: 0 15px 15px;
+                        font-size: 0.9em;
+                    }
+                    .links{
+                        font-size: 1.2em;
+                    }
+                }
+    
+                // Mostrar work-caract ao passar o mouse
+                &:hover .work-caract{
+                    display: flex; // Mostra ao passar o mouse
+                    transition: display 0s linear; // Mostra imediatamente sem delay
+                }
+                &:hover  .hard-skils {
+                    display: block; 
+                    transition: display 0s linear;// Torna a seção visível ao passar o mouse
+                }
             }
 
-            img {
-                width: 100%;
-                height: 200px;
-                object-fit: cover;
-            }
+           
+           
 
-            h3 {
-                font-size: 1.3em;
-                color: $primary-color;
-                margin: 15px;
-            }
-
-            p {
-                margin: 0 15px 15px;
-                font-size: 0.9em;
-            }
         }
     }
 }
@@ -346,7 +455,13 @@ section {
         padding: 20px;
         background-color: rgba(255, 255, 255, 0.1);
         border-radius: 10px;
-
+        &:hover {
+            box-shadow: 0 0 30px 10px $primary-color;
+            transform: translateY(-5px);
+        }
+        .texto{
+            font-size: 1.3em;
+        }
         h3 {
             font-family: "Protest Strike", sans-serif;
             font-weight: bold;
@@ -369,6 +484,20 @@ section {
 
 // Contato
 #contact {
+    .lista-rede-sociais{
+        margin-top: 20px;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        flex-direction:row ;
+        li{
+            color: $primary-color;
+            padding: 10px;
+            margin: 0px 2px;
+            font-size: 1.5em;
+        }
+
+    }
     h3{
        
         @include flex-center()
@@ -473,4 +602,158 @@ footer {
   
   .stat-card {
     animation: glow 2s infinite alternate;
+  }
+  
+
+
+  
+  @media (max-width: 1000px) {
+    section{
+        max-width: 90%
+    }
+    header{
+        position: sticky;
+        margin-bottom: 50px;
+    }
+    header nav {
+        
+      flex-direction: column;
+        
+      
+      
+      ul {
+        flex-direction: row;
+        align-items: center;
+        
+        
+        li {
+            font-size: 0.9em;
+          margin: 5px 5px;
+        }
+      }
+      
+      .cv-abaixar {
+        
+        padding: 1px 1px;
+        font-size: 0.8;
+      }
+    }
+.stats{
+    display: none;
+    .stat-card{
+        display: none;
+        .number{
+            display: none;
+           
+        }
+    }
+}
+#home {
+    height: 100%;
+    margin: 20px 0px;
+    width: 90%;
+    @include flex-center();
+    flex-direction: column-reverse;
+
+    .container-left{
+        h1 {
+            font-size: 1.8em;
+          }
+          
+          h2 {
+            font-size: 1.2em;
+            
+            .web-dev, .mobile {
+              font-size: 1.3em;
+            }
+          }
+
+        .lista-rede-sociais{
+            width: 75%;
+        }
+        .text-content-mobile{
+            color: $primary-color;
+           
+            font-size: 1.4em;
+        }
+    }
+    .container-right{
+        max-width: 90%;
+        img{
+            width: 300px;
+            height: 300px;
+            transform: rotate(0deg);
+        }
+    }
+   
+}
+
+
+    
+    #services .service p {
+      font-size: 1.2em;
+    }
+    
+    #works .work-grid .work-em-volta-item .grid-item {
+      .work-caract, .hard-skils {
+        border-radius: 0px;
+        position: static;
+        display: block;
+        margin-top: 0px;
+        font-size: 0.8em;
+      }
+    }
+    #works{
+        .work-grid .work-em-volta-item .grid-item{
+            h2{
+                font-size: 1.5em;
+            }
+        }
+        .h3-link{
+            margin-top: 10px;
+        }
+    }
+    
+    #contact {
+        .botao-copiar {
+           
+            flex-direction: column;
+            
+            input, button {
+              
+              width: 90%;
+              font-size: 1.4em;
+            }
+          }
+
+          .lista-rede-sociais{
+            
+            
+            @include flex-center();
+            width: 75%;
+          }
+    }
+  }
+  
+  @media (max-width: 480px) {
+    section {
+      padding: 5px 10px;
+    }
+    
+    #home h1 {
+      font-size: 1.5em;
+    }
+    
+    #services .service h3,
+    #experience .experience-item h3 {
+      font-size: 1.5em;
+    }
+    
+    #experience .experience-item .texto {
+      font-size: 1.1em;
+    }
+    
+    .lista-rede-sociais li {
+      font-size: 1.2em;
+    }
   }
