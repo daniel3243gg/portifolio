@@ -307,13 +307,17 @@ section {
 }
 
 // Trabalhos
+.primeiro{
+    .work-caract{
+        right: 0%;
+        left: 100%;
+    }
+}
 #works {
     
     .work-grid {
         display: grid;
-        .parent:hover .work-caract.above {
-            transform: translateY(-100%);
-        }
+        
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 30px;
     
@@ -399,7 +403,39 @@ section {
                         }
                     }
                 }
+
+                .work-caract-pri {
+                    display: none; // Começa escondido
+                    background-color: $accent-color;
+                    color: $text-color;
+                    padding: 15px; // Ajuste o padding conforme necessário
+                    border-radius: 15px;
+                    position: absolute; // Para posicioná-lo em relação ao item pai
+                    top: 0; // Ajuste conforme necessário para que apareça abaixo do item
+                    
+                    left: 100%; // Alinhado à esquerda do item pai
+                    z-index: 2; // Certifique-se de que esteja acima de outros elementos
     
+                    ul {
+                        list-style: none;
+                        
+                        padding: 0;
+                        margin: 0;
+    
+                        li {
+                            display: flex;
+                            font-family: "Protest Strike", sans-serif;
+                            font-weight: bold;
+                            background-image: linear-gradient(90deg, $text-color, #d4a1ff); // Gradiente para variação de cor
+                            -webkit-background-clip: text; // Apenas o texto recebe o gradiente
+                            -webkit-text-fill-color: transparent;
+                            margin: 10px 0px;
+                            font-size: 1.5em;
+                        }
+                    }
+                }
+                
+                
                 .work-item {
                     width: 100%;
                     background-color: rgba(255, 255, 255, 0.1);
@@ -434,7 +470,7 @@ section {
                 }
     
                 // Mostrar work-caract ao passar o mouse
-                &:hover .work-caract{
+                &:hover .work-caract , .work-caract-pri{
                     display: flex; // Mostra ao passar o mouse
                     transition: display 0s linear; // Mostra imediatamente sem delay
                 }

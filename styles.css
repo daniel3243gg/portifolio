@@ -237,13 +237,15 @@ section h2 {
   margin-bottom: 15px;
 }
 
+.primeiro .work-caract {
+  right: 0%;
+  left: 100%;
+}
+
 #works .work-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
-}
-#works .work-grid .parent:hover .work-caract.above {
-  transform: translateY(-100%);
 }
 #works .work-grid .work-em-volta-item {
   display: flex;
@@ -321,6 +323,32 @@ section h2 {
   margin: 10px 0px;
   font-size: 1.5em;
 }
+#works .work-grid .work-em-volta-item .grid-item .work-caract-pri {
+  display: none;
+  background-color: #4C1D95;
+  color: #FFFFFF;
+  padding: 15px;
+  border-radius: 15px;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  z-index: 2;
+}
+#works .work-grid .work-em-volta-item .grid-item .work-caract-pri ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#works .work-grid .work-em-volta-item .grid-item .work-caract-pri ul li {
+  display: flex;
+  font-family: "Protest Strike", sans-serif;
+  font-weight: bold;
+  background-image: linear-gradient(90deg, #FFFFFF, #d4a1ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 10px 0px;
+  font-size: 1.5em;
+}
 #works .work-grid .work-em-volta-item .grid-item .work-item {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.1);
@@ -348,7 +376,7 @@ section h2 {
 #works .work-grid .work-em-volta-item .grid-item .work-item .links {
   font-size: 1.2em;
 }
-#works .work-grid .work-em-volta-item .grid-item:hover .work-caract {
+#works .work-grid .work-em-volta-item .grid-item:hover .work-caract, #works .work-grid .work-em-volta-item .grid-item .work-caract-pri {
   display: flex;
   transition: display 0s linear;
 }
