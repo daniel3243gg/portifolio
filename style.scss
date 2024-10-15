@@ -673,6 +673,8 @@ footer {
             width: 75%;
         }
         .text-content-mobile{
+            display: flex;
+            flex-direction: column;
             color: $primary-color;
            
             font-size: 1.4em;
