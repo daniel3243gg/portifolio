@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-
+// FDDXGDG
     // Animação dos números na seção de estatísticas
     const stats = document.querySelectorAll('.stat .number');
     const animateStats = () => {
