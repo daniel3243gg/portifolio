@@ -134,6 +134,9 @@ section h2 {
   margin: 0px 2px;
   font-size: 1.5em;
 }
+#home .container-left .text-content-mobile {
+  display: none;
+}
 #home .container-right {
   width: 100%;
 }
@@ -239,28 +242,116 @@ section h2 {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
 }
-#works .work-grid .work-item {
+#works .work-grid .work-em-volta-item {
+  display: flex;
+  flex-direction: column;
+}
+#works .work-grid .work-em-volta-item .grid-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  transition: flex-grow 0.3s ease;
+}
+#works .work-grid .work-em-volta-item .grid-item:hover {
+  transform: scale(1.05);
+  flex-grow: 2;
+  z-index: 1;
+}
+#works .work-grid .work-em-volta-item .grid-item .hard-skils {
+  display: none;
+  width: 90%;
+  background-color: #4C1D95;
+  color: #FFFFFF;
+  padding: 15px;
+  border-radius: 15px;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 2;
+}
+#works .work-grid .work-em-volta-item .grid-item .hard-skils ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0;
+}
+#works .work-grid .work-em-volta-item .grid-item .hard-skils ul li {
+  text-align: center;
+  color: #0F0F0F;
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  font-family: "Protest Strike", sans-serif;
+  font-weight: bold;
+  background-color: #8B5CF6;
+  margin: 10px 10px;
+  font-size: 1em;
+}
+#works .work-grid .work-em-volta-item .grid-item .hard-skils ul li img {
+  margin-right: 4px;
+  max-width: 1.5em;
+}
+#works .work-grid .work-em-volta-item .grid-item .work-caract {
+  display: none;
+  background-color: #4C1D95;
+  color: #FFFFFF;
+  padding: 15px;
+  border-radius: 15px;
+  position: absolute;
+  top: 0;
+  right: 100%;
+  z-index: 2;
+}
+#works .work-grid .work-em-volta-item .grid-item .work-caract ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#works .work-grid .work-em-volta-item .grid-item .work-caract ul li {
+  display: flex;
+  font-family: "Protest Strike", sans-serif;
+  font-weight: bold;
+  background-image: linear-gradient(90deg, #FFFFFF, #d4a1ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 10px 0px;
+  font-size: 1.5em;
+}
+#works .work-grid .work-em-volta-item .grid-item .work-item {
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  overflow: hidden;
   transition: transform 0.3s ease;
+  height: 100%;
 }
-#works .work-grid .work-item:hover {
+#works .work-grid .work-em-volta-item .grid-item .work-item:hover {
   transform: translateY(-5px);
 }
-#works .work-grid .work-item img {
+#works .work-grid .work-em-volta-item .grid-item .work-item img {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
-#works .work-grid .work-item h3 {
+#works .work-grid .work-em-volta-item .grid-item .work-item h3 {
   font-size: 1.3em;
   color: #8B5CF6;
   margin: 15px;
 }
-#works .work-grid .work-item p {
+#works .work-grid .work-em-volta-item .grid-item .work-item p {
   margin: 0 15px 15px;
   font-size: 0.9em;
+}
+#works .work-grid .work-em-volta-item .grid-item .work-item .links {
+  font-size: 1.2em;
+}
+#works .work-grid .work-em-volta-item .grid-item:hover .work-caract {
+  display: flex;
+  transition: display 0s linear;
+}
+#works .work-grid .work-em-volta-item .grid-item:hover .hard-skils {
+  display: block;
+  transition: display 0s linear;
 }
 
 #experience .experience-item {
@@ -268,6 +359,13 @@ section h2 {
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
+}
+#experience .experience-item:hover {
+  box-shadow: 0 0 30px 10px #8B5CF6;
+  transform: translateY(-5px);
+}
+#experience .experience-item .texto {
+  font-size: 1.3em;
 }
 #experience .experience-item h3 {
   font-family: "Protest Strike", sans-serif;
@@ -286,6 +384,19 @@ section h2 {
   margin-bottom: 10px;
 }
 
+#contact .lista-rede-sociais {
+  margin-top: 20px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+#contact .lista-rede-sociais li {
+  color: #8B5CF6;
+  padding: 10px;
+  margin: 0px 2px;
+  font-size: 1.5em;
+}
 #contact h3 {
   display: flex;
   justify-content: center;
@@ -370,6 +481,120 @@ footer {
 }
 .stat-card {
   animation: glow 2s infinite alternate;
+}
+
+@media (max-width: 1000px) {
+  section {
+    max-width: 90%;
+  }
+  header {
+    position: sticky;
+    margin-bottom: 50px;
+  }
+  header nav {
+    flex-direction: column;
+  }
+  header nav ul {
+    flex-direction: row;
+    align-items: center;
+  }
+  header nav ul li {
+    font-size: 0.9em;
+    margin: 5px 5px;
+  }
+  header nav .cv-abaixar {
+    padding: 1px 1px;
+    font-size: 0.8;
+  }
+  .stats {
+    display: none;
+  }
+  .stats .stat-card {
+    display: none;
+  }
+  .stats .stat-card .number {
+    display: none;
+  }
+  #home {
+    height: 100%;
+    margin: 20px 0px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+  #home .container-left h1 {
+    font-size: 1.8em;
+  }
+  #home .container-left h2 {
+    font-size: 1.2em;
+  }
+  #home .container-left h2 .web-dev, #home .container-left h2 .mobile {
+    font-size: 1.3em;
+  }
+  #home .container-left .lista-rede-sociais {
+    width: 75%;
+  }
+  #home .container-left .text-content-mobile {
+    color: #8B5CF6;
+    font-size: 1.4em;
+  }
+  #home .container-right {
+    max-width: 90%;
+  }
+  #home .container-right img {
+    width: 300px;
+    height: 300px;
+    transform: rotate(0deg);
+  }
+  #services .service p {
+    font-size: 1.2em;
+  }
+  #works .work-grid .work-em-volta-item .grid-item .work-caract, #works .work-grid .work-em-volta-item .grid-item .hard-skils {
+    border-radius: 0px;
+    position: static;
+    display: block;
+    margin-top: 0px;
+    font-size: 0.8em;
+  }
+  #works .work-grid .work-em-volta-item .grid-item h2 {
+    font-size: 1.5em;
+  }
+  #works .h3-link {
+    margin-top: 10px;
+  }
+  #contact .botao-copiar {
+    flex-direction: column;
+  }
+  #contact .botao-copiar input, #contact .botao-copiar button {
+    width: 90%;
+    font-size: 1.4em;
+  }
+  #contact .lista-rede-sociais {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+  }
+}
+@media (max-width: 480px) {
+  section {
+    padding: 5px 10px;
+  }
+  #home h1 {
+    font-size: 1.5em;
+  }
+  #services .service h3,
+  #experience .experience-item h3 {
+    font-size: 1.5em;
+  }
+  #experience .experience-item .texto {
+    font-size: 1.1em;
+  }
+  .lista-rede-sociais li {
+    font-size: 1.2em;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
