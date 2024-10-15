@@ -242,6 +242,9 @@ section h2 {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 30px;
 }
+#works .work-grid .parent:hover .work-caract.above {
+  transform: translateY(-100%);
+}
 #works .work-grid .work-em-volta-item {
   display: flex;
   flex-direction: column;

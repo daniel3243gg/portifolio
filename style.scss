@@ -311,6 +311,9 @@ section {
     
     .work-grid {
         display: grid;
+        .parent:hover .work-caract.above {
+            transform: translateY(-100%);
+        }
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 30px;
     
